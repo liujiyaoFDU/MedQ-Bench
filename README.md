@@ -1,4 +1,7 @@
 <div align="center">
+<div style="width: 20%; text-align: center; margin:auto;">
+    <img style="width:100%" src="images/logo.png" alt="logo">
+</div>
 
 # MedQ-Bench: Evaluating and Exploring Medical Image Quality Assessment Abilities in MLLMs
 
@@ -8,12 +11,8 @@ _Bridging the gap between traditional medical IQA and human-like reasoning with 
 [![Arxiv](https://img.shields.io/badge/arXiv-2025.submit-b31b1b.svg)](https://github.com/liujiyaoFDU/MedQBench/blob/main/MedQbench_paper.pdf)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/release/python-380/)
-
 <div>
-<strong>Jiyao Liu<sup>1,2*</sup>, Jinjie Wei<sup>1*</sup>, Wanying Qu<sup>1</sup>, Chenglong Ma<sup>1,2</sup>, Junzhi Ning<sup>2</sup>, Yunheng Li<sup>1</sup>,</strong><br>
-<strong>Ying Chen<sup>2</sup>, Xinzhe Luo<sup>3</sup>, Pengcheng Chen<sup>2</sup>, Xin Gao<sup>1</sup>, Ming Hu<sup>2</sup>, Huihui Xu<sup>2</sup>, Xin Wang<sup>2</sup>,</strong><br>
-<strong>Shujian Gao<sup>1</sup>, Dingkang Yang<sup>1</sup>, Zhongying Deng<sup>4</sup>, Jin Ye<sup>2</sup>, Lihao Liu<sup>2†</sup>, Junjun He<sup>2†</sup>,</strong><br>
-<strong>Ningsheng Xu<sup>1</sup></strong>
+<strong>Jiyao Liu<sup>1*</sup>, Jinjie Wei<sup>1*</sup>, Wanying Qu<sup>1</sup>, Chenglong Ma<sup>1,2</sup>, Junzhi Ning<sup>2</sup>, Yunheng Li<sup>1</sup>, Ying Chen<sup>2</sup>, Xinzhe Luo<sup>3</sup>, Pengcheng Chen<sup>2</sup>, Xin Gao<sup>1</sup>, Ming Hu<sup>2</sup>, Huihui Xu<sup>2</sup>, Xin Wang<sup>2</sup>, Shujian Gao<sup>1</sup>, Dingkang Yang<sup>1</sup>, Zhongying Deng<sup>4</sup>, Jin Ye<sup>2</sup>, Lihao Liu<sup>2†</sup>, Junjun He<sup>2†</sup>, Ningsheng Xu<sup>1</sup></strong>
 </div>
 
 <div>
@@ -27,11 +26,6 @@ _Bridging the gap between traditional medical IQA and human-like reasoning with 
 <div style="width: 100%; text-align: center; margin:auto;">
     <img style="width:100%" src="images/framework.jpeg" alt="MedQBench Framework">
 </div>
-
-<div style="width: 100%; text-align: center; margin:auto;">
-    <img style="width:100%" src="images/example.jpeg" alt="MedQBench Example">
-</div>
-
 </div>
 
 ## 🔥 News
@@ -45,6 +39,11 @@ _Bridging the gap between traditional medical IQA and human-like reasoning with 
 
 **MedQ-Bench** is the first comprehensive benchmark for evaluating **Medical Image Quality Assessment (IQA)** capabilities of Multi-modal Large Language Models (MLLMs). Unlike traditional score-based IQA methods, MedQ-Bench introduces a **perception-reasoning paradigm** that mirrors clinicians' cognitive workflow for quality assessment.
 
+<div style="width: 100%; text-align: center; margin:auto;">
+    <img style="width:100%" src="images/compare_case.png" alt="Why Reasoning-based IQA - Traditional vs. Reasoning Approach">
+    <p><em>Comparison of traditional score-based IQA vs. our reasoning-based approach. Unlike purely numerical scores, reasoning IQA identifies distortion types and their relative impact, yielding results more consistent with human judgment.</em></p>
+</div>
+
 ### 🔍 Key Innovations
 
 - **🏥 Medical-Specialized Focus**: Designed specifically for medical imaging quality assessment across 5 modalities
@@ -55,6 +54,11 @@ _Bridging the gap between traditional medical IQA and human-like reasoning with 
 ## 🏗️ Benchmark Architecture
 
 ### 📋 Two Complementary Tasks
+
+<div style="width: 100%; text-align: center; margin:auto;">
+    <img style="width:100%" src="images/example.jpeg" alt="MedQBench Task Examples">
+    <p><em>Examples of MedQ-Bench evaluation tasks across different modalities, covering perception (MCQA) tasks, no-reference reasoning, and comparative reasoning scenarios.</em></p>
+</div>
 
 1. **MedQ-Perception**: Probes low-level perceptual capability via human-curated questions
    - Yes-or-No, What, How question types
@@ -70,11 +74,11 @@ _Bridging the gap between traditional medical IQA and human-like reasoning with 
 
 | Modality | Samples | Key Degradation Types |
 |----------|---------|----------------------|
-| **CT** | 878 | Metal artifacts, noise, streak artifacts |
-| **MRI** | 848 | Motion artifacts, undersampling, susceptibility |
-| **Histopathology** | 758 | Staining artifacts, focus issues, compression |
-| **Endoscopy** | 555 | Illumination, specular reflection, motion blur |
-| **Fundus** | 269 | Color distortion, illumination, contrast issues |
+| **CT** | 878 | Metal artifacts, noise, streak artifacts, ... |
+| **MRI** | 848 | Motion artifacts, undersampling, susceptibility, ... |
+| **Histopathology** | 758 | Staining artifacts, focus issues, compression, ... |
+| **Endoscopy** | 555 | Illumination, specular reflection, motion blur, ... |
+| **Fundus** | 269 | Color distortion, illumination, contrast issues, ... |
 
 ### 🎯 Multi-Dimensional Evaluation
 
@@ -179,6 +183,8 @@ We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.
 ## 📄 Citation
 
 If you use MedQ-Bench in your research, please cite our paper:
+
+> Submiting to arxiv...
 
 ```bibtex
 @article{liu2025medqbench,
