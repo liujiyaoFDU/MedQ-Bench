@@ -1,6 +1,6 @@
 <div align="center">
 <div style="width: 20%; text-align: center; margin:auto;">
-    <img style="width:20%" src="images/logo.png" alt="logo">
+    <img style="width:10%" src="images/logo.png" alt="logo">
 </div>
 
 # MedQ-Bench: Evaluating and Exploring Medical Image Quality Assessment Abilities in MLLMs
