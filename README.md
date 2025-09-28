@@ -40,7 +40,7 @@ _Bridging the gap between traditional medical IQA and human-like reasoning with 
 **MedQ-Bench** is the first comprehensive benchmark for evaluating **Medical Image Quality Assessment (IQA)** capabilities of Multi-modal Large Language Models (MLLMs). Unlike traditional score-based IQA methods, MedQ-Bench introduces a **perception-reasoning paradigm** that mirrors clinicians' cognitive workflow for quality assessment.
 
 <div style="width: 100%; text-align: center; margin:auto;">
-    <img style="width:100%" src="images/compare_case.png" alt="Why Reasoning-based IQA - Traditional vs. Reasoning Approach">
+    <img style="width:50%" src="images/compare_case.png" alt="Why Reasoning-based IQA - Traditional vs. Reasoning Approach">
     <p><em>Comparison of traditional score-based IQA vs. our reasoning-based approach. Unlike purely numerical scores, reasoning IQA identifies distortion types and their relative impact, yielding results more consistent with human judgment.</em></p>
 </div>
 
