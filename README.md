@@ -4,7 +4,8 @@
 
 _Bridging the gap between traditional medical IQA and human-like reasoning with Multi-modal Large Language Models_
 
-[![arXiv](https://img.shields.io/badge/arXiv-2025.submit-b31b1b.svg)](https://arxiv.org/abs/submit/6836599)
+<!-- [![arXiv](https://img.shields.io/badge/arXiv-2025.submit-b31b1b.svg)](https://arxiv.org/abs/submit/6836599) -->
+[![Arxiv](https://img.shields.io/badge/arXiv-2025.submit-b31b1b.svg)](https://github.com/liujiyaoFDU/MedQBench/blob/main/MedQbench_paper.pdf)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/release/python-380/)
 
@@ -36,7 +37,7 @@ _Bridging the gap between traditional medical IQA and human-like reasoning with 
 ## 🔥 News
 
 - **[2025.01]** MedQ-Bench paper submitted to arXiv
-- **[2025.01]** Initial code release and benchmark evaluation
+- **[Coming Soon]** Initial code release and benchmark evaluation
 - **[Coming Soon]** Dataset public release
 - **[Coming Soon]** VLMEvalKit integration
 
@@ -61,8 +62,8 @@ _Bridging the gap between traditional medical IQA and human-like reasoning with 
    - No degradation vs. mild/severe degradation levels
 
 2. **MedQ-Reasoning**: Encompasses reasoning tasks aligning with human-like quality assessment
-   - No-reference reasoning (single image analysis)
-   - Comparison reasoning (paired image evaluation)
+   - **No-reference reasoning** (single image analysis with detailed quality description)
+   - **Comparative reasoning** (paired image evaluation and comparison)
    - Coarse-grained vs. fine-grained difficulty levels
 
 ### 🏥 Coverage Across Medical Imaging
@@ -104,19 +105,7 @@ _Bridging the gap between traditional medical IQA and human-like reasoning with 
 
 ### 📦 Installation
 
-```bash
-# Clone the repository
-git clone https://github.com/liujiyaoFDU/MedQBench.git
-cd MedQBench
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Install VLMEvalKit for evaluation
-git clone https://github.com/open-compass/VLMEvalKit.git
-cd VLMEvalKit
-pip install -e .
-```
+**[Coming Soon]** 
 
 ### 💾 Dataset Access
 
@@ -127,56 +116,12 @@ The MedQ-Bench dataset will be made available through multiple channels:
 - **📋 Data Request Form**: [Coming Soon]
 
 **Dataset Structure:**
-```
-MedQBench/
-├── perception/
-│   ├── CT/
-│   ├── MRI/
-│   ├── Histopathology/
-│   ├── Endoscopy/
-│   └── Fundus/
-├── reasoning/
-│   ├── no_reference/
-│   └── comparison/
-└── annotations/
-    ├── perception_qa.json
-    ├── reasoning_descriptions.json
-    └── comparison_pairs.json
-```
+
+**[Coming Soon]** 
 
 ### 🔬 Evaluation
 
-#### Using VLMEvalKit Integration
-
-```bash
-# Evaluate on MedQ-Bench Perception tasks
-python run.py --data MedQBench_Perception --model GPT4V
-
-# Evaluate on MedQ-Bench Reasoning tasks
-python run.py --data MedQBench_Reasoning --model GPT4V
-```
-
-#### Custom Evaluation
-
-```python
-from medqbench import MedQBenchEvaluator
-
-# Initialize evaluator
-evaluator = MedQBenchEvaluator()
-
-# Run perception evaluation
-perception_results = evaluator.evaluate_perception(
-    model_name="your_model",
-    model_path="path/to/model"
-)
-
-# Run reasoning evaluation with multi-dimensional scoring
-reasoning_results = evaluator.evaluate_reasoning(
-    model_name="your_model",
-    model_path="path/to/model",
-    use_gpt4_judge=True
-)
-```
+**[Coming Soon]** Evaluation code and VLMEvalKit integration will be available after initial code release.
 
 ## 📈 Leaderboard
 
@@ -190,13 +135,23 @@ reasoning_results = evaluator.evaluate_reasoning(
 | 4 | Qwen2.5-VL-72B | **78.67%** | 42.25% | 56.44% | 63.14% |
 | 5 | Gemini-2.5-Pro | 75.13% | **55.02%** | 50.54% | 61.88% |
 
-### Reasoning Tasks (Test Set)
+### No-Reference Reasoning Tasks (Test Set)
 
 | Rank | Model | Comp. ↑ | Prec. ↑ | Cons. ↑ | Qual. ↑ | Overall ↑ |
 |------|-------|---------|---------|---------|---------|-----------|
 | 🥇 | GPT-5 | **1.195** | **1.118** | 1.837 | **1.529** | **5.679** |
 | 🥈 | GPT-4o | 1.009 | 1.027 | **1.878** | 1.407 | 5.321 |
 | 🥉 | Grok-4 | 0.982 | 0.846 | 1.801 | 1.389 | 5.017 |
+
+### Comparative Reasoning Tasks (Test Set)
+
+| Rank | Model Category | Model | Comp. ↑ | Prec. ↑ | Cons. ↑ | Qual. ↑ | Overall ↑ |
+|------|----------------|-------|---------|---------|---------|---------|-----------|
+| 🥇 | Commercial | **GPT-5** | **1.293** | **1.556** | 1.925 | **1.564** | **6.338** |
+| 🥈 | Commercial | **GPT-4o** | 1.105 | 1.414 | 1.632 | 1.562 | 5.713 |
+| 🥉 | Commercial | **Grok-4** | 1.150 | 1.233 | 1.820 | 1.459 | 5.662 |
+| 4 | Commercial | Gemini-2.5-Pro | 1.053 | 1.233 | 1.774 | 1.534 | 5.594 |
+| 5 | Open-Source | InternVL3-8B | 0.985 | 1.278 | 1.797 | 1.474 | 5.534 |
 
 *Scores are on a 0-2 scale for each dimension*
 
@@ -215,32 +170,11 @@ reasoning_results = evaluator.evaluate_reasoning(
 3. **Consistency Issues**: Mismatch between observed artifacts and quality conclusion
 4. **Medical Knowledge**: Limited understanding of clinical significance
 
-## 🔬 Research Applications
-
-### For Model Developers
-- **Benchmark MLLM medical capabilities** against established baselines
-- **Identify specific weaknesses** in medical visual understanding
-- **Guide targeted improvements** for medical domain adaptation
-
-### For Clinical Researchers
-- **Assess AI readiness** for clinical image quality control
-- **Understand failure modes** in automated quality assessment
-- **Validate AI systems** before clinical deployment
-
-### For Computer Vision Researchers
-- **Explore perception-reasoning paradigm** for quality assessment
-- **Develop better evaluation metrics** for nuanced visual tasks
-- **Study human-AI alignment** in specialized domains
 
 ## 🤝 Contributing
 
 We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
 
-### 🎯 Areas for Contribution
-- **Model Evaluation**: Submit results for new models
-- **Dataset Extension**: Add new modalities or degradation types
-- **Evaluation Metrics**: Propose improved assessment methods
-- **Analysis Tools**: Develop visualization and analysis utilities
 
 ## 📄 Citation
 
@@ -257,15 +191,15 @@ If you use MedQ-Bench in your research, please cite our paper:
 
 ## 📞 Contact
 
-- **Lihao Liu**: [liulihao@pjlab.org.cn](mailto:liulihao@pjlab.org.cn)
+- **Jiyao Liu**: [jiyaoliu.fudan@gmail.com](mailto:jiyaoliu.fudan@gmail.com)
+- **Lihao Liu**: [lihaoliu@amazon.com](mailto:lihaoliu@amazon.com)
 - **Junjun He**: [hejunjun@pjlab.org.cn](mailto:hejunjun@pjlab.org.cn)
-- **Project Issues**: [GitHub Issues](https://github.com/liujiyaoFDU/MedQBench/issues)
+
 
 ## 🙏 Acknowledgments
 
-- **Q-Bench Team**: For the foundational framework for vision quality assessment
-- **VLMEvalKit**: For the comprehensive evaluation infrastructure
-- **Medical Imaging Community**: For valuable feedback and domain expertise
+- **[Q-Bench](https://github.com/Q-Future/Q-Bench) Team**: For the foundational framework for vision quality assessment
+- **[VLMEvalKit](https://github.com/open-compass/VLMEvalKit)**: For the comprehensive evaluation infrastructure
 - **All Radiologists**: Who contributed to human evaluation and validation
 
 ## 📜 License
