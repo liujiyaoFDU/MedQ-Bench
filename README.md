@@ -199,7 +199,7 @@ If you use MedQ-Bench in your research, please cite our paper:
 ## 📞 Contact
 
 - **Jiyao Liu**: [jiyaoliu.fudan@gmail.com](mailto:jiyaoliu.fudan@gmail.com)
-- **Lihao Liu**: [lihaoliu@amazon.com](mailto:lihaoliu@amazon.com)
+- **Lihao Liu**: [liulihao@pjlab.org.cn](mailto:liulihao@pjlab.org.cn)
 - **Junjun He**: [hejunjun@pjlab.org.cn](mailto:hejunjun@pjlab.org.cn)
 
 
