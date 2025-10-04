@@ -7,8 +7,7 @@
 
 _Bridging the gap between traditional medical IQA and human-like reasoning with Multi-modal Large Language Models_
 
-<!-- [![arXiv](https://img.shields.io/badge/arXiv-2025.submit-b31b1b.svg)](https://arxiv.org/abs/submit/6836599) -->
-[![Arxiv](https://img.shields.io/badge/arXiv-2025.submit-b31b1b.svg)](https://github.com/liujiyaoFDU/MedQBench/blob/main/MedQbench_paper.pdf)
+[![arXiv](https://img.shields.io/badge/arXiv-2510.01691-b31b1b.svg)](https://arxiv.org/abs/2510.01691)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/release/python-380/)
 <div>
@@ -31,8 +30,8 @@ _Bridging the gap between traditional medical IQA and human-like reasoning with 
 ## 🔥 News
 
 - **[2025.01]** MedQ-Bench paper submitted to arXiv
+- **[2025.01]** Dataset publicly released on Hugging Face
 - **[Coming Soon]** Initial code release and benchmark evaluation
-- **[Coming Soon]** Dataset public release
 - **[Coming Soon]** VLMEvalKit integration
 
 ## 🎯 Overview
@@ -48,7 +47,7 @@ _Bridging the gap between traditional medical IQA and human-like reasoning with 
 ### 🔍 Key Innovations
 
 - **🏥 Medical-Specialized Focus**: Designed specifically for medical imaging quality assessment across 5 modalities
-- **🧠 Perception-Reasoning Paradigm**: Evaluates both low-level perceptual abilities and high-level reasoning skills
+- **🧠 Perception-Reasoning Paradigm**: Evaluates both Visual quality perceptual abilities and reasoning skills
 - **📊 Comprehensive Evaluation**: 3,308 samples covering 40+ quality attributes with multi-dimensional assessment
 - **👨‍⚕️ Human-AI Alignment**: Validated against expert radiologist assessments with strong correlation (κw > 0.77)
 
@@ -101,10 +100,13 @@ _Bridging the gap between traditional medical IQA and human-like reasoning with 
 
 ### 🔍 Critical Insights
 
-1. **Substantial Human-AI Gap**: Best AI model (GPT-5: 68.97%) vs. Human experts (82.50%) - **13.53% gap**
-2. **Medical Models Underperform**: Specialized medical models lag behind general-purpose ones
-3. **Mild Degradation Challenge**: Models struggle most with subtle quality issues (56% accuracy)
-4. **Fine-grained Reasoning Limitations**: Significant performance drop in nuanced comparisons
+1. **Substantial Human-AI Performance Gap**: Despite achieving above-random performance, the best-performing AI model (GPT-5: 68.97%) significantly underperforms human experts (82.50%), leaving a **13.53% gap** that highlights insufficient accuracy for reliable clinical deployment without further optimization
+
+2. **Mild Degradation Detection Challenges**: Models exhibit weakest performance on mild degradations (average 56% accuracy) compared to no degradation (72%) and severe degradation (67%), indicating difficulty in detecting subtle quality issues precisely where reliable quality control is most clinically critical
+
+3. **Medical-Specialized Models Underperform**: Contrary to expectations, medical-specialized models (best: MedGemma-27B at 57.16%) consistently lag behind general-purpose models, suggesting current domain adaptation strategies may prioritize high-level diagnostic reasoning over fundamental low-level visual perception capabilities required for quality assessment
+
+4. **Limited Reasoning Capabilities**: Even advanced models achieve only moderate scores in completeness (1.293/2.0) and preciseness (1.556/2.0) for reasoning tasks, demonstrating preliminary but unstable perceptual and reasoning abilities insufficient for complete and accurate quality descriptions
 
 ## 🚀 Getting Started
 
@@ -114,15 +116,8 @@ _Bridging the gap between traditional medical IQA and human-like reasoning with 
 
 ### 💾 Dataset Access
 
-The MedQ-Bench dataset will be made available through multiple channels:
+The MedQ-Bench dataset has been made available through **🤗 Hugging Face** ([jiyaoliufd/MedQ-Bench](https://huggingface.co/datasets/jiyaoliufd/MedQ-Bench))
 
-- **🔗 Direct Download**: [Coming Soon]
-- **🤗 Hugging Face Hub**: [Coming Soon]
-- **📋 Data Request Form**: [Coming Soon]
-
-**Dataset Structure:**
-
-**[Coming Soon]** 
 
 ### 🔬 Evaluation
 
@@ -134,29 +129,31 @@ The MedQ-Bench dataset will be made available through multiple channels:
 
 | Rank | Model | Yes-or-No ↑ | What ↑ | How ↑ | Overall ↑ |
 |------|-------|-------------|--------|-------|-----------|
-| 🥇 | GPT-5 | **82.26%** | **60.47%** | **58.28%** | **68.97%** |
+| 🥇 | GPT-5 | **82.26%** | **60.47%** | 58.28% | **68.97%** |
 | 🥈 | GPT-4o | 78.48% | 49.64% | 57.32% | 64.79% |
+| 🥉 | Qwen2.5-VL-72B | 78.67% | 42.25% | 56.44% | 63.14% |
 | 🥉 | Grok-4 | 73.30% | 48.84% | **59.10%** | 63.14% |
-| 4 | Qwen2.5-VL-72B | **78.67%** | 42.25% | 56.44% | 63.14% |
-| 5 | Gemini-2.5-Pro | 75.13% | **55.02%** | 50.54% | 61.88% |
+| 5 | Gemini-2.5-Pro | 75.13% | 55.02% | 50.54% | 61.88% |
 
 ### No-Reference Reasoning Tasks (Test Set)
 
 | Rank | Model | Comp. ↑ | Prec. ↑ | Cons. ↑ | Qual. ↑ | Overall ↑ |
 |------|-------|---------|---------|---------|---------|-----------|
-| 🥇 | GPT-5 | **1.195** | **1.118** | 1.837 | **1.529** | **5.679** |
-| 🥈 | GPT-4o | 1.009 | 1.027 | **1.878** | 1.407 | 5.321 |
-| 🥉 | Grok-4 | 0.982 | 0.846 | 1.801 | 1.389 | 5.017 |
+| 🥇 | GPT-5 | **1.195** | **1.118** | 1.837 | 1.529 | **5.679** |
+| 🥈 | GPT-4o | 1.009 | 1.027 | 1.878 | 1.407 | 5.321 |
+| 🥉 | Qwen2.5-VL-32B | 1.077 | 0.928 | **1.977** | 1.290 | 5.272 |
+| 4 | Gemini-2.5-Pro | 0.878 | 0.891 | 1.688 | **1.561** | 5.018 |
+| 5 | Grok-4 | 0.982 | 0.846 | 1.801 | 1.389 | 5.017 |
 
 ### Comparative Reasoning Tasks (Test Set)
 
-| Rank | Model Category | Model | Comp. ↑ | Prec. ↑ | Cons. ↑ | Qual. ↑ | Overall ↑ |
-|------|----------------|-------|---------|---------|---------|---------|-----------|
-| 🥇 | Commercial | **GPT-5** | **1.293** | **1.556** | 1.925 | **1.564** | **6.338** |
-| 🥈 | Commercial | **GPT-4o** | 1.105 | 1.414 | 1.632 | 1.562 | 5.713 |
-| 🥉 | Commercial | **Grok-4** | 1.150 | 1.233 | 1.820 | 1.459 | 5.662 |
-| 4 | Commercial | Gemini-2.5-Pro | 1.053 | 1.233 | 1.774 | 1.534 | 5.594 |
-| 5 | Open-Source | InternVL3-8B | 0.985 | 1.278 | 1.797 | 1.474 | 5.534 |
+| Rank | Model | Comp. ↑ | Prec. ↑ | Cons. ↑ | Qual. ↑ | Overall ↑ |
+|------|-------|---------|---------|---------|---------|-----------|
+| 🥇 | GPT-5 | **1.293** | **1.556** | 1.925 | **1.564** | **6.338** |
+| 🥈 | GPT-4o | 1.105 | 1.414 | 1.632 | 1.562 | 5.713 |
+| 🥉 | Grok-4 | 1.150 | 1.233 | 1.820 | 1.459 | 5.662 |
+| 4 | Gemini-2.5-Pro | 1.053 | 1.233 | 1.774 | 1.534 | 5.594 |
+| 5 | InternVL3-8B | 0.985 | 1.278 | 1.797 | 1.474 | 5.534 |
 
 *Scores are on a 0-2 scale for each dimension*
 
@@ -185,14 +182,15 @@ We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.
 
 If you use MedQ-Bench in your research, please cite our paper:
 
-> Submiting to arxiv...
-
 ```bibtex
-@article{liu2025medqbench,
-  title={MedQ-Bench: Evaluating and Exploring Medical Image Quality Assessment Abilities in MLLMs},
-  author={Liu, Jiyao and Wei, Jinjie and Qu, Wanying and Ma, Chenglong and Ning, Junzhi and Li, Yunheng and Chen, Ying and Luo, Xinzhe and Chen, Pengcheng and Gao, Xin and Hu, Ming and Xu, Huihui and Wang, Xin and Gao, Shujian and Yang, Dingkang and Deng, Zhongying and Ye, Jin and Liu, Lihao and He, Junjun and Xu, Ningsheng},
-  journal={arXiv preprint arXiv:submit/6836599},
-  year={2025}
+@misc{liu2025medqbenchevaluatingexploringmedical,
+      title={MedQ-Bench: Evaluating and Exploring Medical Image Quality Assessment Abilities in MLLMs},
+      author={Jiyao Liu and Jinjie Wei and Wanying Qu and Chenglong Ma and Junzhi Ning and Yunheng Li and Ying Chen and Xinzhe Luo and Pengcheng Chen and Xin Gao and Ming Hu and Huihui Xu and Xin Wang and Shujian Gao and Dingkang Yang and Zhongying Deng and Jin Ye and Lihao Liu and Junjun He and Ningsheng Xu},
+      year={2025},
+      eprint={2510.01691},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2510.01691},
 }
 ```
 
