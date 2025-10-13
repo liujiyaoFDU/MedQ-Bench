@@ -29,10 +29,9 @@ _Bridging the gap between traditional medical IQA and human-like reasoning with 
 
 ## 🔥 News
 
-- **[2025.01]** MedQ-Bench paper submitted to arXiv
-- **[2025.01]** Dataset publicly released on Hugging Face
-- **[Coming Soon]** Initial code release and benchmark evaluation
-- **[Coming Soon]** VLMEvalKit integration
+- **[2025.10]** VLMEvalKit integration now supported!
+- **[2025.09]** MedQ-Bench paper submitted to arXiv
+- **[2025.09]** Dataset publicly released on Hugging Face
 
 ## 🎯 Overview
 
@@ -110,10 +109,6 @@ _Bridging the gap between traditional medical IQA and human-like reasoning with 
 
 ## 🚀 Getting Started
 
-### 📦 Installation
-
-**[Coming Soon]** 
-
 ### 💾 Dataset Access
 
 The MedQ-Bench dataset has been made available through **🤗 Hugging Face** ([jiyaoliufd/MedQ-Bench](https://huggingface.co/datasets/jiyaoliufd/MedQ-Bench))
@@ -121,7 +116,38 @@ The MedQ-Bench dataset has been made available through **🤗 Hugging Face** ([j
 
 ### 🔬 Evaluation
 
-**[Coming Soon]** Evaluation code and VLMEvalKit integration will be available after initial code release.
+MedQ-Bench is now integrated with **[VLMEvalKit](https://github.com/open-compass/VLMEvalKit)** for seamless evaluation of vision-language models.
+
+#### Installation
+
+Please refer to the [VLMEvalKit Quick Start Guide](https://github.com/open-compass/VLMEvalKit/blob/main/docs/en/Quickstart.md) for installation instructions.
+
+#### Usage
+
+Evaluate your model on MedQ-Bench tasks using the following commands:
+
+**1. Perception Task (Multiple Choice Questions):**
+```bash
+python run.py --model grok-4 --data MedqbenchMCQ_test --api-nproc 32 --retry 3 --reuse
+```
+
+**2. No-Reference Reasoning Task (Caption):**
+```bash
+python run.py --model grok-4 --data MedqbenchCaption_test --api-nproc 32 --retry 3 --reuse
+```
+
+**3. Comparative Reasoning Task (Paired Description):**
+```bash
+python run.py --model grok-4 --data MedqbenchPairedDescription_dev --judge gpt-4o --api-nproc 32 --retry 3 --reuse
+```
+
+**Parameters:**
+- `--model`: The model to evaluate (e.g., `grok-4`, `gpt-4o`, `qwen2.5-vl-72b`)
+- `--data`: The MedQ-Bench dataset split (`MedqbenchMCQ_test`, `MedqbenchCaption_test`, `MedqbenchPairedDescription_dev`)
+- `--judge`: Judge model for reasoning tasks (e.g., `gpt-4o`) - required for comparative reasoning
+- `--api-nproc`: Number of parallel API calls (default: 32)
+- `--retry`: Number of retry attempts for failed API calls (default: 3)
+- `--reuse`: Reuse existing results to avoid redundant API calls
 
 ## 📈 Leaderboard
 
