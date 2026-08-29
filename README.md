@@ -3,19 +3,22 @@
     <img style="width:10%" src="images/logo.png" alt="logo">
 </div>
 
-# MedQ-Bench: Evaluating and Exploring Medical Image Quality Assessment Abilities in MLLMs
+# Can MLLMs Perceive and Describe Medical Image Quality Beyond Scores?
 
 _Bridging the gap between traditional medical IQA and human-like reasoning with Multi-modal Large Language Models_
 
-[![arXiv](https://img.shields.io/badge/arXiv-2510.01691-b31b1b.svg)](https://arxiv.org/abs/2510.01691)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/release/python-380/)
 <div>
-<strong>Jiyao Liu<sup>1*</sup>, Jinjie Wei<sup>1*</sup>, Wanying Qu<sup>1</sup>, Chenglong Ma<sup>1,2</sup>, Junzhi Ning<sup>2</sup>, Yunheng Li<sup>1</sup>, Ying Chen<sup>2</sup>, Xinzhe Luo<sup>3</sup>, Pengcheng Chen<sup>2</sup>, Xin Gao<sup>1</sup>, Ming Hu<sup>2</sup>, Huihui Xu<sup>2</sup>, Xin Wang<sup>2</sup>, Shujian Gao<sup>1</sup>, Dingkang Yang<sup>1</sup>, Zhongying Deng<sup>4</sup>, Jin Ye<sup>2</sup>, Lihao Liu<sup>2†</sup>, Junjun He<sup>2†</sup>, Ningsheng Xu<sup>1</sup></strong>
+<strong>Jiyao Liu<sup>1*</sup>, Jinjie Wei<sup>3*</sup>, Wanying Qu<sup>1</sup>, Chenglong Ma<sup>1</sup>, Junzhi Ning<sup>2</sup>, Yunheng Li<sup>1</sup>,<br>
+Ying Chen<sup>2</sup>, Jiafan Zhang<sup>2</sup>, Pengcheng Chen<sup>1</sup>, Xin Gao<sup>1</sup>, Ming Hu<sup>2</sup>, Xin Wang<sup>2</sup>,<br>
+Shujian Gao<sup>1,2</sup>, Dingkang Yang<sup>1</sup>, Zhongying Deng<sup>4</sup>, Jin Ye<sup>2</sup>,<br>
+Lihao Liu<sup>5†</sup>, Junjun He<sup>2†</sup>, Ningsheng Xu<sup>1</sup></strong>
 </div>
 
 <div>
-<sup>1</sup>Fudan University, <sup>2</sup>Shanghai Artificial Intelligence Laboratory, <sup>3</sup>Imperial College London, <sup>4</sup>University of Cambridge
+<sup>1</sup>Fudan University, <sup>2</sup>Shanghai AI Lab, <sup>3</sup>MBZUAI,<br>
+<sup>4</sup>Cambridge University, <sup>5</sup>Amazon
 </div>
 
 <div>
@@ -30,7 +33,6 @@ _Bridging the gap between traditional medical IQA and human-like reasoning with 
 ## 🔥 News
 
 - **[2025.10]** VLMEvalKit integration now supported!
-- **[2025.09]** MedQ-Bench paper submitted to arXiv
 - **[2025.09]** Dataset publicly released on Hugging Face
 
 ## 🎯 Overview
@@ -202,29 +204,6 @@ python run.py --model grok-4 --data MedqbenchPairedDescription_dev --judge gpt-4
 ## 🤝 Contributing
 
 We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
-
-
-## 📄 Citation
-
-If you use MedQ-Bench in your research, please cite our paper:
-
-```bibtex
-@misc{liu2025medqbenchevaluatingexploringmedical,
-      title={MedQ-Bench: Evaluating and Exploring Medical Image Quality Assessment Abilities in MLLMs},
-      author={Jiyao Liu and Jinjie Wei and Wanying Qu and Chenglong Ma and Junzhi Ning and Yunheng Li and Ying Chen and Xinzhe Luo and Pengcheng Chen and Xin Gao and Ming Hu and Huihui Xu and Xin Wang and Shujian Gao and Dingkang Yang and Zhongying Deng and Jin Ye and Lihao Liu and Junjun He and Ningsheng Xu},
-      year={2025},
-      eprint={2510.01691},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2510.01691},
-}
-```
-
-## 📞 Contact
-
-- **Jiyao Liu**: [jiyaoliu.fudan@gmail.com](mailto:jiyaoliu.fudan@gmail.com)
-- **Lihao Liu**: [liulihao@pjlab.org.cn](mailto:liulihao@pjlab.org.cn)
-- **Junjun He**: [hejunjun@pjlab.org.cn](mailto:hejunjun@pjlab.org.cn)
 
 
 ## 🙏 Acknowledgments
