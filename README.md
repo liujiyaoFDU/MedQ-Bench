@@ -228,25 +228,7 @@ If you use MedQ-Bench in your research, please cite our EMNLP 2026 paper:
 @inproceedings{liu-etal-2026-mllms,
     title = "Can {MLLM}s Perceive and Describe Medical Image Quality Beyond
       Scores?",
-    author = "Liu, Jiyao  and
-      Wei, Jinjie  and
-      Qu, Wanying  and
-      Ma, Chenglong  and
-      Ning, Junzhi  and
-      Li, Yunheng  and
-      Chen, Ying  and
-      Zhang, Jiafan  and
-      Chen, Pengcheng  and
-      Gao, Xin  and
-      Hu, Ming  and
-      Wang, Xin  and
-      Gao, Shujian  and
-      Yang, Dingkang  and
-      Deng, Zhongying  and
-      Ye, Jin  and
-      Liu, Lihao  and
-      He, Junjun  and
-      Xu, Ningsheng",
+    author = "Liu, Jiyao and Wei, Jinjie and Qu, Wanying and Ma, Chenglong and Ning, Junzhi and Li, Yunheng and Chen, Ying and Zhang, Jiafan and Chen, Pengcheng and Gao, Xin and Hu, Ming and Wang, Xin and Gao, Shujian and Yang, Dingkang and Deng, Zhongying and Ye, Jin and Liu, Lihao and He, Junjun and Xu, Ningsheng",
     editor = "Lee, Hung-Yi  and
       Dev, Sunipa  and
       Li, Jessy  and
