@@ -39,16 +39,6 @@ Lihao Liu<sup>5†</sup>, Junjun He<sup>2†</sup>, Ningsheng Xu<sup>1</sup></st
 - **[2025.10]** VLMEvalKit integration now supported!
 - **[2025.09]** Dataset publicly released on Hugging Face
 
-## 📄 Paper
-
-**[Can MLLMs Perceive and Describe Medical Image Quality Beyond Scores?](https://aclanthology.org/2026.emnlp-main.1129/)**
-
-Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing, pages 25854–25877.
-
-[ACL Anthology](https://aclanthology.org/2026.emnlp-main.1129/) · [PDF](https://aclanthology.org/2026.emnlp-main.1129.pdf) · [DOI: 10.18653/2026.emnlp-main.1129](https://doi.org/10.18653/2026.emnlp-main.1129)
-
-The [arXiv preprint (2510.01691)](https://arxiv.org/abs/2510.01691) is available under the earlier title *MedQ-Bench: Evaluating and Exploring Medical Image Quality Assessment Abilities in MLLMs*.
-
 ## 🎯 Overview
 
 **MedQ-Bench** is the first comprehensive benchmark for evaluating **Medical Image Quality Assessment (IQA)** capabilities of Multi-modal Large Language Models (MLLMs). Unlike traditional score-based IQA methods, MedQ-Bench introduces a **perception-reasoning paradigm** that mirrors clinicians' cognitive workflow for quality assessment.
