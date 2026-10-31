@@ -34,6 +34,7 @@ Lihao Liu<sup>5†</sup>, Junjun He<sup>2†</sup>, Ningsheng Xu<sup>1</sup></st
 
 ## 🔥 News
 
+- **[2026.10.27]** 🏆 Our paper received an **[Outstanding Paper Award](https://2026.emnlp.org/program/awards_papers/#outstanding-papers)** at **EMNLP 2026**.
 - **[2026.10]** Our paper, [Can MLLMs Perceive and Describe Medical Image Quality Beyond Scores?](https://aclanthology.org/2026.emnlp-main.1129/), is published in **EMNLP 2026**.
 - **[2025.10]** VLMEvalKit integration now supported!
 - **[2025.09]** Dataset publicly released on Hugging Face
