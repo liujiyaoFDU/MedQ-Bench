@@ -9,6 +9,9 @@ _Bridging the gap between traditional medical IQA and human-like reasoning with 
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/release/python-380/)
+
+[**Paper (EMNLP 2026)**](https://aclanthology.org/2026.emnlp-main.1129/) · [**arXiv**](https://arxiv.org/abs/2510.01691) · [**Paper PDF**](https://aclanthology.org/2026.emnlp-main.1129.pdf) · [**Dataset**](https://huggingface.co/datasets/jiyaoliufd/MedQ-Bench) · [**Citation**](#citation)
+
 <div>
 <strong>Jiyao Liu<sup>1*</sup>, Jinjie Wei<sup>3*</sup>, Wanying Qu<sup>1</sup>, Chenglong Ma<sup>1</sup>, Junzhi Ning<sup>2</sup>, Yunheng Li<sup>1</sup>,<br>
 Ying Chen<sup>2</sup>, Jiafan Zhang<sup>2</sup>, Pengcheng Chen<sup>1</sup>, Xin Gao<sup>1</sup>, Ming Hu<sup>2</sup>, Xin Wang<sup>2</sup>,<br>
@@ -32,8 +35,19 @@ Lihao Liu<sup>5†</sup>, Junjun He<sup>2†</sup>, Ningsheng Xu<sup>1</sup></st
 
 ## 🔥 News
 
+- **[2026.10]** Our paper, [Can MLLMs Perceive and Describe Medical Image Quality Beyond Scores?](https://aclanthology.org/2026.emnlp-main.1129/), is published in **EMNLP 2026**.
 - **[2025.10]** VLMEvalKit integration now supported!
 - **[2025.09]** Dataset publicly released on Hugging Face
+
+## 📄 Paper
+
+**[Can MLLMs Perceive and Describe Medical Image Quality Beyond Scores?](https://aclanthology.org/2026.emnlp-main.1129/)**
+
+Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing, pages 25854–25877.
+
+[ACL Anthology](https://aclanthology.org/2026.emnlp-main.1129/) · [PDF](https://aclanthology.org/2026.emnlp-main.1129.pdf) · [DOI: 10.18653/2026.emnlp-main.1129](https://doi.org/10.18653/2026.emnlp-main.1129)
+
+The [arXiv preprint (2510.01691)](https://arxiv.org/abs/2510.01691) is available under the earlier title *MedQ-Bench: Evaluating and Exploring Medical Image Quality Assessment Abilities in MLLMs*. Please cite the EMNLP 2026 publication using the [BibTeX entry below](#citation).
 
 ## 🎯 Overview
 
@@ -205,6 +219,49 @@ python run.py --model grok-4 --data MedqbenchPairedDescription_dev --judge gpt-4
 
 We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
 
+
+## Citation
+
+If you use MedQ-Bench in your research, please cite our EMNLP 2026 paper:
+
+```bibtex
+@inproceedings{liu-etal-2026-mllms,
+    title = "Can {MLLM}s Perceive and Describe Medical Image Quality Beyond Scores?",
+    author = "Liu, Jiyao  and
+      Wei, Jinjie  and
+      Qu, Wanying  and
+      Ma, Chenglong  and
+      Ning, Junzhi  and
+      Li, Yunheng  and
+      Chen, Ying  and
+      Zhang, Jiafan  and
+      Chen, Pengcheng  and
+      Gao, Xin  and
+      Hu, Ming  and
+      Wang, Xin  and
+      Gao, Shujian  and
+      Yang, Dingkang  and
+      Deng, Zhongying  and
+      Ye, Jin  and
+      Liu, Lihao  and
+      He, Junjun  and
+      Xu, Ningsheng",
+    editor = "Lee, Hung-Yi  and
+      Dev, Sunipa  and
+      Li, Jessy  and
+      Elliott, Desmond",
+    booktitle = "Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing",
+    month = oct,
+    year = "2026",
+    address = "Budapest, Hungary",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2026.emnlp-main.1129/",
+    doi = "10.18653/2026.emnlp-main.1129",
+    pages = "25854--25877",
+    ISBN = "979-8-89176-459-0",
+    abstract = "Medical Image Quality Assessment (IQA) serves as a critical safety gate for clinical AI, yet existing approaches rely on scalar metrics that fail to capture the descriptive, expert-like evaluation process central to clinical practice. We introduce MedQ-Bench, a comprehensive benchmark for language-based medical IQA evaluation with MLLMs, establishing a perception{--}description paradigm across 5 imaging modalities and over 40 quality attributes. The benchmark comprises two complementary tasks: MedQ-Perception probes low-level visual attribute discrimination via 2,600 expert-annotated perceptual queries; MedQ-Description covers both no-reference and comparison description sub-tasks with 708 expert-annotated samples, evaluated through a four-dimensional judging protocol. Comprehensive evaluation of 23 state-of-the-art MLLMs reveals that current models exhibit only preliminary and unstable capabilities, and highlights the urgent need for targeted optimization of MLLMs in medical IQA. Project Dataset: https://github.com/liujiyaoFDU/MedQ-Bench"
+}
+```
 
 ## 🙏 Acknowledgments
 
